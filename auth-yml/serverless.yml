@@ -1,0 +1,18 @@
+service: pp-aws-python-alexa-skill
+
+provider:
+  name: aws
+  runtime: python3.8
+  stage: dev
+  region: us-east-1
+  lambdaHashingVersion: 20201221
+
+plugins:
+  - serverless-alexa-skills
+
+custom:
+  alexa:
+    vendorId: ${env:AMAZON_VENDOR_ID}
+    clientId: ${env:AMAZON_CLIENT_ID}
+    clientSecret: ${env:AMAZON_CLIENT_SECRET}
+    localServerPort: 9090

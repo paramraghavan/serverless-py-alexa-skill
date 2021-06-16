@@ -1,0 +1,87 @@
+service: pp-aws-python-alexa-skill
+
+provider:
+  name: aws
+  runtime: python3.8
+  stage: dev
+  region: us-east-1
+  lambdaHashingVersion: 20201221
+
+functions:
+  luckyNumber:
+    handler: lucky_number_handler.lucky_number
+    events:
+      - alexaSkill: ${file(./config/env_${self:provider.stage}.json):ALEXA_SKILL_ID}
+
+plugins:
+  - serverless-alexa-skills
+
+custom:
+  alexa:
+    vendorId: ${file(./config/env_${self:provider.stage}.json):AMAZON_VENDOR_ID}
+    clientId: ${file(./config/env_${self:provider.stage}.json):AMAZON_CLIENT_ID}
+    clientSecret: ${file(./config/env_${self:provider.stage}.json):AMAZON_CLIENT_SECRET}
+    localServerPort: 9090
+    skills:
+      - id: ${file(./config/env_${self:provider.stage}.json):ALEXA_SKILL_ID}
+        manifest:
+          publishingInformation:
+            locales:
+              en-US:
+                name: LuckyNumber
+          apis:
+            custom:
+              endpoint:
+                uri: arn:aws:lambda:us-east-1:${file(./config/env_${self:provider.stage}.json):AWS_ACCOUNT}:function:pp-aws-python-alexa-skill-${self:provider.stage}-luckyNumber
+          manifestVersion: '1.0'
+        models:
+          en-US:
+            interactionModel:
+              languageModel:
+                invocationName: good ducky
+                intents:
+                - name: LuckyNumberIntent
+                  slots:
+                      - name: UpperLimit
+                        type: AMAZON.NUMBER
+                  samples:
+                      - 'what is my lucky number lower than {UpperLimit}'
+                      - 'what is my lucky number under {UpperLimit}'
+                      - 'what is my lucky number'
+                      - 'tell me my lucky number'
+                      - 'tell me my lucky numbers lower than {UpperLimit}'
+                - name: HackIntent
+                  samples:
+                      - 'hack for today'
+                      - 'share a hack'
+                      - "today's hack"
+                - name: AMAZON.HelpIntent
+                  samples:
+                      - 'help'
+                      - 'help me'
+                      - 'can you help me'
+                - name: AMAZON.CancelIntent
+                  samples:
+                      - 'cancel'
+                      - 'stop'
+                - name: AMAZON.StopIntent
+                  samples:
+                      - 'bye'
+                      - 'good bye'
+                      - GoodBye
+                      - done
+
+package:
+  exclude:
+    - node_modules/**
+    - venv/**
+    - handler.py1
+    - help/**
+    - .gitignore
+    - help/**
+    - .idea/**
+    - .dynamodb/**
+    - __pycache__
+    - tests/**
+    - package.json
+    - README.md

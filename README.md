@@ -17,23 +17,24 @@ Build and deploy Alexa using Serverless framework and python
 - Dashboard
 - Alexa Skills Kit
 
-# 3. Install Serverless
+3. Install Serverless
 - install *serverless framework* - https://www.serverless.com/framework/docs/providers/aws/guide/quick-start/
 - Install *node*, my node version v14.15.5. https://nodejs.org/dist/v14.17.0/node-v14.17.0-x64.msi
 - npm install -g serverless
 
-# The following is needed when pull the project from git repo the very first time. Creates the node modules for alexa calls 
+4. The following is needed when pull the project from git repo the very first time. Creates the node modules for alexa calls 
 - sls plugin install -n serverless-alexa-skills 
 - pycharm community edition or visual source code or spyder
 - git bash
 - install aws cli --> https://awscli.amazonaws.com/AWSCLIV2.msi
 
-# Install python 3.8
+5. Install python 3.8
  - Virtual env --> https://uoa-eresearch.github.io/eresearch-cookbook/recipe/2014/11/26/python-virtual-env/
  - py -m pip install virtualenv or python -m pip install virtualenv
  - create venv --> virtualenv venv --python=python3
 
-# pip install -r requirements.txt
+# install python libraries used by the project
+pip install -r requirements.txt
 
 # Create requirements.txt
 - pip freeze > requirements.txt
@@ -48,12 +49,13 @@ Build and deploy Alexa using Serverless framework and python
 - sls alexa auth
 
 # Note
-- The security token expires in 1 hour. Therefore, if an authentication error occurs, please re-execute the command
+The security token expires in 1 hour. Therefore, if an authentication error occurs, please re-execute the command
 
-cd alexa\pp-aws-python-alexa-skill
 # Create SKill and Interaction Model, creation of the skil is done hte very first time only.
+- cd alexa\pp-aws-python-alexa-skill
 - sls alexa create --name LuckyNumber --locale en-US --type custom
-# create manifests and update with skill
+
+# create manifests and update with skill. This manofest file goes into serverless.yml
 - sls alexa manifests
 
 # set the environment variables, once u login into developer.amazon.com, set the following details
