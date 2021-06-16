@@ -50,7 +50,7 @@ Build and deploy Alexa using Serverless framework and python
 # Note
 - The security token expires in 1 hour. Therefore, if an authentication error occurs, please re-execute the command
 
-# cd alexa\pp-aws-python-alexa-skill
+cd alexa\pp-aws-python-alexa-skill
 # Create SKill and Interaction Model, creation of the skil is done hte very first time only.
 - sls alexa create --name LuckyNumber --locale en-US --type custom
 # create manifests and update with skill
