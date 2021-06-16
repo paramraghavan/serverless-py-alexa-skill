@@ -18,32 +18,32 @@ Build and deploy Alexa using Serverless framework and python
 - Alexa Skills Kit
 
 # 3. Install Serverless
-# install *serverless framework* - https://www.serverless.com/framework/docs/providers/aws/guide/quick-start/
-# Install *node*, my node version v14.15.5. https://nodejs.org/dist/v14.17.0/node-v14.17.0-x64.msi
-# npm install -g serverless
+- install *serverless framework* - https://www.serverless.com/framework/docs/providers/aws/guide/quick-start/
+- Install *node*, my node version v14.15.5. https://nodejs.org/dist/v14.17.0/node-v14.17.0-x64.msi
+- npm install -g serverless
 
 # The following is needed when pull the project from git repo the very first time. Creates the node modules for alexa calls 
-# sls plugin install -n serverless-alexa-skills 
-# pycharm community edition or visual source code or spyder
-# git bash
-# install aws cli --> https://awscli.amazonaws.com/AWSCLIV2.msi
+- sls plugin install -n serverless-alexa-skills 
+- pycharm community edition or visual source code or spyder
+- git bash
+- install aws cli --> https://awscli.amazonaws.com/AWSCLIV2.msi
 
 # Install python 3.8
-# Virtual Env
-# Virtual env --> https://uoa-eresearch.github.io/eresearch-cookbook/recipe/2014/11/26/python-virtual-env/
+- Virtual env --> https://uoa-eresearch.github.io/eresearch-cookbook/recipe/2014/11/26/python-virtual-env/
 - py -m pip install virtualenv or python -m pip install virtualenv
 # create venv --> virtualenv venv --python=python3
 
-### pip install -r requirements.txt
+# pip install -r requirements.txt
 
 # Create requirements.txt
 - pip freeze > requirements.txt
 
 
-# login into developer.amazon.com - needed to create and sync-up the skill, the models and intents - updated
-# once the models are updated perform the build
-# u can view the models by using --> sls alex models
-# in the serverless.yml
+# login into developer.amazon.com - needed to create and sync-up the skill, the models and intents
+- once the models are updated perform the build
+- u can view the models by using --> sls alex models
+
+# get security token
 - cd alexa\pp-aws-python-alexa-skill\auth-yml
 - sls alexa auth
 
