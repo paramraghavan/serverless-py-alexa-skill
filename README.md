@@ -49,7 +49,7 @@ pip install -r requirements.txt
 - sls alexa auth
 
 # Note
-The security token expires in 1 hour. Therefore, if an authentication error occurs, please re-execute the command
+The security token expires in 1 hour. Therefore, if an authentication error occurs, please re-execute the *sls alexa auth* command
 
 # Create SKill and Interaction Model, creation of the skil is done hte very first time only.
 - cd alexa\pp-aws-python-alexa-skill
