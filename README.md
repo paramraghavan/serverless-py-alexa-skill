@@ -2,17 +2,17 @@
 Build and deploy Alexa using Serverless framework and python 
 
 # Alexa python sdk
-https://developer.amazon.com/en-US/docs/alexa/alexa-skills-kit-sdk-for-python/set-up-the-sdk.html
-https://medium.com/analytics-vidhya/basics-for-developing-a-custom-alexa-skill-with-aws-lambda-as-backend-5ac115c2919
-https://dzone.com/articles/alexa-skill-with-python
+- https://developer.amazon.com/en-US/docs/alexa/alexa-skills-kit-sdk-for-python/set-up-the-sdk.html
+- https://medium.com/analytics-vidhya/basics-for-developing-a-custom-alexa-skill-with-aws-lambda-as-backend-5ac115c2919
+- https://dzone.com/articles/alexa-skill-with-python
 
 # Reference
 - https://www.serverless.com/blog/how-to-manage-your-alexa-skills-with-serverless - original
 - https://rupakganguly.com/posts/how-to-build-a-serverless-alexa-skill/
 
 # Pre-requisites:
-# 1. aws.amazon.com --> amazon aws account - to deploy aws lambda - all the logic goes in the lambda
-# 2. developer.amazon.com account
+1. aws.amazon.com --> amazon aws account - to deploy aws lambda - all the logic goes in the lambda
+2. developer.amazon.com account
 - Developer Console
 - Dashboard
 - Alexa Skills Kit
