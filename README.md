@@ -75,6 +75,7 @@ sls alexa update
 
 # see the model created
 - sls alexa models 
+- 
 # aws cli
 aws configure list
 https://www.serverless.com/framework/docs/providers/aws/guide/credentials/
@@ -98,11 +99,11 @@ configure credentials token, make sure u have an aws user created with appropria
 - today's hack
 
 # testing lambda
-# serverless invoke --function lucky_number_handler.lucky_number --path C:\Users\padma\serverless\alexa\pp-aws-python-alexa-skill\help\sample_inut.json
-# pip install pytest
+- serverless invoke --function lucky_number_handler.lucky_number --path C:\Users\padma\serverless\alexa\pp-aws-python-alexa-skill\help\sample_inut.json
+- pip install pytest
 
 # You can view the AWS CloudWatch logs from the terminal by running:
-# did not work for me.
+ did not work for me.
 - sls logs -f luckyNumber
 
 # delete alexa skill
@@ -114,7 +115,7 @@ configure credentials token, make sure u have an aws user created with appropria
 - Life cycle of a skill
  https://stackoverflow.com/questions/5578270/fully-backup-a-git-repo#:~:text=Option%201%3A%20use%20git%20bundle,full%20file%20backup%20of%20mirror.
 
-#Git
+# Git
 Git (/ɡɪt/)[7] is software for tracking changes in any set of files, usually used for coordinating work among programmers collaboratively developing source code during software development. Its goals include speed, data integrity, and support for distributed, non-linear workflows  (thousands of parallel branches running on different systems). -- see web for more details
 
 # Note
@@ -124,7 +125,9 @@ Git (/ɡɪt/)[7] is software for tracking changes in any set of files, usually u
 - git remote show origin
 
 # ASK-CLI
+
 # ASK SDK python
+
 # Sample skill code
 - https://developer.amazon.com/en-US/docs/alexa/alexa-skills-kit-sdk-for-python/sample-skills.html
 - https://developer.amazon.com/en-US/docs/alexa/smapi/quick-start-alexa-skills-kit-command-line-interface.html
