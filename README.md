@@ -43,7 +43,7 @@ Build and deploy Alexa using Serverless framework and python
 - once the models are updated perform the build
 - u can view the models by using --> sls alex models
 
-# get security token - u need to have valid toke to update and view models
+# get security token - u need to have a valid toke, to create skill, update and view models
 - cd alexa\pp-aws-python-alexa-skill\auth-yml
 - sls alexa auth
 
