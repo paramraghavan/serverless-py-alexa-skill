@@ -26,7 +26,6 @@ https://dzone.com/articles/alexa-skill-with-python
 ### sls plugin install -n serverless-alexa-skills 
 ### pycharm community edition or visual source code or spyder
 ### git bash
-### Download backup and sync, https://www.google.com/drive/download/
 ### install aws cli --> https://awscli.amazonaws.com/AWSCLIV2.msi
 
 ### Install python 3.8
@@ -98,8 +97,7 @@ Alexa ask good ducky whats my lucky number under 10
 - share a hack
 - today's hack
 
-#testing lambda
-
+# testing lambda
 ## serverless invoke --function lucky_number_handler.lucky_number --path C:\Users\padma\serverless\alexa\pp-aws-python-alexa-skill\help\sample_inut.json
 ## pip install pytest
 
@@ -107,12 +105,12 @@ Alexa ask good ducky whats my lucky number under 10
 # did not work for me.
 sls logs -f luckyNumber
 
-#delete alexa skill
+# delete alexa skill
  sls alexa delete --id <skill_id>
  sls alexa delete --id amzn1.ask.skill.8e995b14-65b9-4691-965d-1a7a0231944d
 
 
-Notes to discuss:
+# Notes to discuss:
 Life cycle of a skill
 https://stackoverflow.com/questions/5578270/fully-backup-a-git-repo#:~:text=Option%201%3A%20use%20git%20bundle,full%20file%20backup%20of%20mirror.
 
@@ -121,31 +119,6 @@ https://stackoverflow.com/questions/5578270/fully-backup-a-git-repo#:~:text=Opti
 ## work among programmers collaboratively developing source code during software development. 
 ## Its goals include speed, data integrity, and support for distributed, non-linear workflows 
 ## (thousands of parallel branches running on different systems). -- see web for more details
-
-
-# Install google drive for windows  or mac - this is to map google drive as you local drive on laptop or pc.
-# make mirror copy of git from onedrive to google drive
-https://stackoverflow.com/questions/5578270/fully-backup-a-git-repo#:~:text=Option%201%3A%20use%20git%20bundle,full%20file%20backup%20of%20mirror
-Git clone mirror will clone the entire repository, notes, heads, refs, etc. and is typically used to copy an entire repository to a new git server. 
-This will pull down an all branches and everything, the entire repository.
-# git clone --mirror git@example.com/your-repo.git
-
-$ cd /c/Users/padma/Google Drive/git-repo
-$ git clone --mirror ~/OneDrive/git_repo/pp-aws-python-alexa-skill
-Cloning into bare repository 'pp-aws-python-alexa-skill.git'...
-done.
-
-# We will clone from  google drive
-git clone ~/Google\ Drive/git-repo/pp-aws-python-alexa-skill.git/
-git clone ~/Google\ Drive/git-repo/py-learn.git/
-
-#ALEXA-REPO
-git clone --mirror ~/Google\ Drive/git-repo/pp-aws-python-alexa-skill.git/
-git clone --mirror ~/Google\ Drive/git-repo/py-learn.git/
-
-# We will clone from  google drive
-git clone ~/OneDrive/ALEXA-REPO/pp-aws-python-alexa-skill.git/
-git clone ~/OneDrive/ALEXA-REPO/py-learn.git/
 
 # Note
 Repo's on Ondrive and Google drive cannot be shared with others, hence checking into to github
