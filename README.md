@@ -81,11 +81,9 @@ https://www.serverless.com/framework/docs/providers/aws/guide/credentials/
 aws configure --profile slsflaskapp
 aws configure list-profiles
 
-# Create Endpoint, this has all our logic what to do when a invokation and intents  calls are made 
-# deploys lambda endpoint
-# to deploy and remove lambda you need to setup credentials token
-# configure credentials token, make sure u have an aws user created with appropriate permissions 
-# on aws
+# Create Endpoint
+This has all our logic what to do when a invokation and intents  calls are made deploys lambda endpoint. To deploy and remove lambda you need to setup credentials token
+configure credentials token, make sure u have an aws user created with appropriate permissions on aws
 - serverless deploy -v --stage dev
 # removes the deployed lambda endpoint
 - serverless remove -v --stage dev
