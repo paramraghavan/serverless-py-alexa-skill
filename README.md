@@ -29,9 +29,9 @@ Build and deploy Alexa using Serverless framework and python
 - install aws cli --> https://awscli.amazonaws.com/AWSCLIV2.msi
 
 # Install python 3.8
-- Virtual env --> https://uoa-eresearch.github.io/eresearch-cookbook/recipe/2014/11/26/python-virtual-env/
-- py -m pip install virtualenv or python -m pip install virtualenv
-# create venv --> virtualenv venv --python=python3
+ Virtual env --> https://uoa-eresearch.github.io/eresearch-cookbook/recipe/2014/11/26/python-virtual-env/
+ py -m pip install virtualenv or python -m pip install virtualenv
+ create venv --> virtualenv venv --python=python3
 
 # pip install -r requirements.txt
 
