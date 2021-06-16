@@ -7,8 +7,8 @@ https://medium.com/analytics-vidhya/basics-for-developing-a-custom-alexa-skill-w
 https://dzone.com/articles/alexa-skill-with-python
 
 # Reference
-## https://www.serverless.com/blog/how-to-manage-your-alexa-skills-with-serverless - original
-## https://rupakganguly.com/posts/how-to-build-a-serverless-alexa-skill/
+- https://www.serverless.com/blog/how-to-manage-your-alexa-skills-with-serverless - original
+- https://rupakganguly.com/posts/how-to-build-a-serverless-alexa-skill/
 
 # Pre-requisites:
 # 1. aws.amazon.com --> amazon aws account - to deploy aws lambda - all the logic goes in the lambda
