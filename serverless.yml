@@ -9,7 +9,7 @@ provider:
 
 functions:
   luckyNumber:
-    handler: lucky_number_handler.lucky_number
+    handler: alexa_skills.lucky_number_handler.lucky_number
     events:
       - alexaSkill: ${file(./config/env_${self:provider.stage}.json):ALEXA_SKILL_ID}
 

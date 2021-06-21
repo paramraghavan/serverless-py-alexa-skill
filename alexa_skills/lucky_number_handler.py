@@ -1,4 +1,4 @@
-from aws_helper.LuckyNumberSkill import LuckNumberSkill
+from alexa_skills.LuckyNumberSkill import LuckNumberSkill
 
 
 def lucky_number(event, context):

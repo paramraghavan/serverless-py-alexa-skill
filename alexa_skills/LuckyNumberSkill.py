@@ -56,7 +56,7 @@ def call_hack_intent():
     # as array index is from 0(and not from 1) to n-1
     number_of_hacks = len(hacks) - 1
     hack_array_index = random.randint(0, number_of_hacks)
-
+    # call medical api
     response = {
         'version': '1.0',
         'response': {
