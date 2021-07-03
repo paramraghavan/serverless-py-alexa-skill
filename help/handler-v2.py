@@ -36,6 +36,8 @@ def call_no_matching_intent(event):
     message = ''
     if 'intent' not in event['request']:
         message = 'Intent has not been defined'
+        message = 'Ask for a hack, say - good ducky share a hack or' \
+                  'Ask for a LuckyNumber, say - good ducky '
     elif 'name' in event['request']['intent']:
         message = 'This ,' + event['request']['intent']['name'] + ', intent is not supported'
     else:

@@ -41,7 +41,7 @@ class LuckNumberSkill(LambdaBase):
             no_intent_message = 'Welcome to good ducky, what would you like to do, ' \
                                 'my lucky number or hack for today'
             return get_response_for_intent_not_defined(event, no_intent_message)
-
+        #CLICKIFSICK
         if event['request']['intent']['name'] == 'LuckyNumberIntent':
             return call_lucky_number_intent(event)
         elif event['request']['intent']['name'] == 'HackIntent':
