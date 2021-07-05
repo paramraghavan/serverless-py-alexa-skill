@@ -6,3 +6,4 @@
 /tests/data/sample_input_intent_slot.json
 /tests/data/sample_input_with_nointent.json
 /tests/data/sample_inut.json
+/config/env_dev_ygpsquare.json
