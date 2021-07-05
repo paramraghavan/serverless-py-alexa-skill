@@ -43,24 +43,20 @@
                 "s3:CreateBucket",
                 "s3:DeleteBucket",
                 "s3:ListBucket",
+                "s3:ListAllMyBuckets",
                 "s3:ListBucketVersions",
                 "s3:PutAccelerateConfiguration",
                 "s3:GetEncryptionConfiguration",
-                "s3:PutEncryptionConfiguration"
-            ],
-            "Resource": [
-                "arn:aws:s3:::click*"
-            ]
-        },
-        {
-            "Effect": "Allow",
-            "Action": [
+                "s3:PutEncryptionConfiguration",
+                "s3:CreateBucket",
+                "s3:PutBucketPolicy",
+                "s3:DeleteBucketPolicy",
                 "s3:PutObject",
                 "s3:GetObject",
                 "s3:DeleteObject"
             ],
             "Resource": [
-                "arn:aws:s3:::click*"
+                "arn:aws:s3:::*"
             ]
         },
         {
@@ -158,17 +154,6 @@
             ],
             "Resource": [
                 "arn:aws:dynamodb:*:*:table/*"
-            ]
-        },
-        {
-            "Effect": "Allow",
-            "Action": [
-                "s3:CreateBucket",
-                "s3:PutBucketPolicy",
-                "s3:DeleteBucketPolicy"
-            ],
-            "Resource": [
-                "arn:aws:s3:::*"
             ]
         }
     ]
