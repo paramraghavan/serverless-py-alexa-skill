@@ -46,10 +46,35 @@ class LuckNumberSkill(LambdaBase):
             return call_lucky_number_intent(event)
         elif event['request']['intent']['name'] == 'HackIntent':
             return call_hack_intent()
+        elif event['request']['intent']['name'] == 'AskIntent':
+            print('AskIntent')
+            return call_ask_intent(event)
         else:
             no_intent_message = 'Welcome to good ducky, what would you like to do, ' \
                                 'my lucky number or hack for today'
             return call_no_matching_intent(event, no_intent_message)
+
+
+def call_ask_intent(event):
+    singerDict = event['request']['intent']['slots']['Singer']
+    singer = 'Anyone'
+    if 'value' in singerDict:
+        singer = singerDict['value']
+
+    print(f'Singer is {singer}')
+
+    # call medical api
+    response = {
+        'version': '1.0',
+        'response': {
+            'outputSpeech': {
+                'type': 'PlainText',
+                'text': f"{singer}, alexa say's please sing your favourite song for us.",
+            },
+            "shouldEndSession": True
+        }
+    }
+    return response
 
 
 def call_hack_intent():

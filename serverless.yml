@@ -1,4 +1,4 @@
-service: pp-aws-python-alexa-skill
+service: click-aws-python-alexa-skill
 
 provider:
   name: aws
@@ -32,7 +32,7 @@ custom:
           apis:
             custom:
               endpoint:
-                uri: arn:aws:lambda:us-east-1:${file(./config/env_${self:provider.stage}.json):AWS_ACCOUNT}:function:pp-aws-python-alexa-skill-${self:provider.stage}-luckyNumber
+                uri: arn:aws:lambda:us-east-1:${file(./config/env_${self:provider.stage}.json):AWS_ACCOUNT}:function:click-aws-python-alexa-skill-${self:provider.stage}-luckyNumber
           manifestVersion: '1.0'
         models:
           en-US:
@@ -55,6 +55,17 @@ custom:
                       - 'hack for today'
                       - 'share a hack'
                       - "today's hack"
+                - name: AskIntent
+                  slots:
+                      - name: Singer
+                        type: CUSTOM_SINGER
+                  samples:
+                      - 'ask {Singer} to sing a song'
+                      - '{Singer} sing a song'
+                      - '{Singer} please sing a song'
+                      - '{Singer} sing'
+                      - '{Singer} sing please'
+                      - '{Singer} please sing'
                 - name: AMAZON.HelpIntent
                   samples:
                       - 'help'
@@ -70,6 +81,39 @@ custom:
                       - 'good bye'
                       - GoodBye
                       - done
+                types:
+                  - values:
+                      - name:
+                          value: thatha
+                      - name:
+                          value: patti
+                      - name:
+                          value: anyone
+                      - name:
+                          value: Amma
+                      - name:
+                          value: appa
+                      - name:
+                          value: param
+                      - name:
+                          value: Punitha
+                      - name:
+                          value: Punitha mami
+                      - name:
+                          value: Suri mama
+                      - name:
+                          value: Suri
+                      - name:
+                          value: Padma
+                      - name:
+                          value: Yogesh
+                      - name:
+                          value: Gayathri
+                      - name:
+                          value: Janani
+                      - name:
+                          value: shanker
+                    name: CUSTOM_SINGER
 
 package:
   exclude:
