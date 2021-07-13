@@ -141,3 +141,4 @@ Login and navigate to Settings and then User Permissions. There click 'Add New' 
 
 Notes:
 - https://github.com/alexa/alexa-cookbook
+- https://github.com/alexa/alexa-skills-kit-sdk-for-python
