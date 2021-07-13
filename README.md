@@ -138,3 +138,6 @@ Git (/ɡɪt/)[7] is software for tracking changes in any set of files, usually u
 
 # Add more users developer.amazon.com
 Login and navigate to Settings and then User Permissions. There click 'Add New' and add the email address of a registered user and assign them to a role: Developer, Administrator, Marketer, Analyst. Administrator has full access, while other roles are more restricted (developer can upload binaries, analyst can view reports,
+
+Notes:
+- https://github.com/alexa/alexa-cookbook
