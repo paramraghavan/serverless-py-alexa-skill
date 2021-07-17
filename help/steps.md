@@ -167,3 +167,7 @@ There click 'Add New' and add the email address of a registered user
 and assign them to a role: Developer, Administrator, Marketer, Analyst. 
 Administrator has full access, while other roles are more restricted 
 (developer can upload binaries, analyst can view reports,
+
+Rest API Click if Sick
+-------------------------
+https://awscli.amazonaws.com/AWSCLIV2.pkg
