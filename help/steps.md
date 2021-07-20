@@ -28,6 +28,7 @@ https://dzone.com/articles/alexa-skill-with-python
 ### git bash
 ### Download backup and sync, https://www.google.com/drive/download/
 ### install aws cli --> https://awscli.amazonaws.com/AWSCLIV2.msi
+### mac https://awscli.amazonaws.com/AWSCLIV2.pkg
 
 ### Install python 3.8
 ### Virtual Env
@@ -58,11 +59,11 @@ sls alexa auth
 
 # set the environment variables, once u login into developer.amazon.com, set the following details
 # in file config/env_dev.json
-AMAZON_VENDOR_ID=DE23456723890
+AMAZON_VENDOR_ID=XXXXXXXXXXXXXXXXXX
 AMAZON_CLIENT_ID=amzn1.application-oa2-client.ewewew22324343ml343r33535
 AMAZON_CLIENT_SECRET=23232333333333333333333333333333333333333333333333333333333333
 ALEXA_SKILL_ID=amzn1.ask.skill.sewewewe-2222-2345-34356-2323222321
-AWS_ACCOUNT=223434354464
+AWS_ACCOUNT=XXXXXXXXXXXXXX
 
 # Add intents to the model. Update(save the model) and build the model
 sls alexa update

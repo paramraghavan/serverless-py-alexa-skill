@@ -6,17 +6,27 @@ provider:
   stage: dev
   region: us-east-1
   lambdaHashingVersion: 20201221
+  environment:
+    CIS_SERVICE_URL: ${file(./config/env_${self:provider.stage}.json):CIS_SERVICE_URL}
+    CIS_AWS_ACCESS_KEY_ID: ${file(./config/env_${self:provider.stage}.json):CIS_AWS_ACCESS_KEY_ID}
+    CIS_AWS_SECRET_ACCESS_KEY: ${file(./config/env_${self:provider.stage}.json):CIS_AWS_SECRET_ACCESS_KEY}
 
 functions:
   luckyNumber:
     handler: alexa_skills.lucky_number_handler.lucky_number
     events:
       - alexaSkill: ${file(./config/env_${self:provider.stage}.json):ALEXA_SKILL_ID}
+  cisDiagnosis:
+    handler: alexa_skills.cis_diagnosis.lambda_handler
+    events:
+      - alexaSkill: ${file(./config/env_${self:provider.stage}.json):ALEXA_SKILL_ID_1}
 
 plugins:
   - serverless-alexa-skills
-
+  - serverless-python-requirements
 custom:
+  pythonRequirements:
+    dockerizePip: false
   alexa:
     vendorId: ${file(./config/env_${self:provider.stage}.json):AMAZON_VENDOR_ID}
     clientId: ${file(./config/env_${self:provider.stage}.json):AMAZON_CLIENT_ID}
@@ -114,6 +124,42 @@ custom:
                       - name:
                           value: shanker
                     name: CUSTOM_SINGER
+      - id: ${file(./config/env_${self:provider.stage}.json):ALEXA_SKILL_ID_1}
+        manifest:
+          publishingInformation:
+            locales:
+              en-US:
+                name: CISDiagnosis
+          apis:
+            custom:
+              endpoint:
+                uri: arn:aws:lambda:us-east-1:${file(./config/env_${self:provider.stage}.json):AWS_ACCOUNT}:function:click-aws-python-alexa-skill-${self:provider.stage}-cisDiagnosis
+          manifestVersion: '1.0'
+        models:
+          en-US:
+            interactionModel:
+              languageModel:
+                invocationName: cis diagnosis
+                intents:
+                - name: MedicalIntent
+                  slots:
+                      - name: report
+                        type: AMAZON.SearchQuery
+                  samples:
+                      - "Mrs {report}"
+                      - "I {report}"
+                      - "Ms {report}"
+                      - "Mr {report}"
+                - name: AMAZON.HelpIntent
+                  samples:
+                - name: AMAZON.CancelIntent
+                  samples:
+                - name: AMAZON.StopIntent
+                  samples:
+                - name: AMAZON.FallbackIntent
+                  samples:
+                - name: AMAZON.NavigateHomeIntent
+                  samples:
 
 package:
   exclude:
