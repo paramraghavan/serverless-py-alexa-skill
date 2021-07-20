@@ -31,7 +31,7 @@ logger.setLevel(logging.INFO)
 def launch_request_handler(handler_input):
     """Handler for Skill Launch."""
     # type: (HandlerInput) -> Response
-    speech = "Welcome, Tell me your medical condition."
+    speech = "Welcome."
 
     handler_input.response_builder.speak(
         speech + " " + help_text).ask(help_text)
@@ -66,12 +66,13 @@ def session_ended_request_handler(handler_input):
 
 from io import StringIO
 
-
 def getMedicalAnalysis(medical_report):
     client = aws_utils.get_boto3_client(CIS_AWS_ACCESS_KEY_ID, CIS_AWS_SECRET_ACCESS_KEY, 'comprehendmedical')
     response = client.detect_entities_v2(
         Text=medical_report
     )
+    # you will see the response from amazon comprehend in cloudwatch logs
+    print(response)
     mc_dict = {}
     for entity in response['Entities']:
         if entity["Category"] == "MEDICAL_CONDITION" and len(entity["Traits"]) > 0:
@@ -99,8 +100,9 @@ def my_medical_diagnosis_handler(handler_input):
     if report_slot in slots:
         medical_report = slots[report_slot].value
         speakOutput =  getMedicalAnalysis(medical_report)
-        # build json object as per the CISApi
         # handler_input.attributes_manager.session_attributes[color_slot_key] = fav_color
+
+        # we have figure out how to build json object of Medical Conditions as per the CISApi
         speech = "Identified diseases are " + speakOutput
         reprompt = ("That's " + speakOutput)
     else:

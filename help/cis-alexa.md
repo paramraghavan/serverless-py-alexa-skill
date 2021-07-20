@@ -17,8 +17,9 @@ cd auth-yml
 sls alexa auth
 cd ..
 
-- sls alexa create --name ColorPicker --locale en-US --type custom
-- Serverless: [Skill ID] amzn1.ask.skill.e445454-3a30-er343-a694-erererererere
+# create Skill 'CISDiagnosis'
+- sls alexa create --name CISDiagnosis --locale en-US --type custom
+ Note the Skill Id --> Serverless: [Skill ID] amzn1.ask.skill.e445454-3a30-er343-a694-erererererere
 
 # create manifests and update with skill
 - sls alexa manifests
@@ -38,9 +39,13 @@ serverless deploy -v --stage dev
 npm install --save serverless-python-requirements
 
 
-# CIs Diagnosis
-- sls alexa create --name CISDiagnosis --locale en-US --type custom
 
 Rest API Click if Sick
 -------------------------
 https://awscli.amazonaws.com/AWSCLIV2.pkg
+
+Alexa urls
+--------------
+# https://github.com/serverless/examples/tree/master/aws-python-alexa-skill
+  # https://www.serverless.com/blog/how-to-manage-your-alexa-skills-with-serverless - original
+# https://rupakganguly.com/posts/how-to-build-a-serverless-alexa-skill/

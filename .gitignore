@@ -7,3 +7,5 @@
 /tests/data/sample_input_with_nointent.json
 /tests/data/sample_inut.json
 /config/env_dev_ygpsquare.json
+/help/CIS/HomeController.cs
+/help/CIS/Web.config

@@ -12,14 +12,10 @@ provider:
     CIS_AWS_SECRET_ACCESS_KEY: ${file(./config/env_${self:provider.stage}.json):CIS_AWS_SECRET_ACCESS_KEY}
 
 functions:
-  luckyNumber:
-    handler: alexa_skills.lucky_number_handler.lucky_number
-    events:
-      - alexaSkill: ${file(./config/env_${self:provider.stage}.json):ALEXA_SKILL_ID}
   cisDiagnosis:
     handler: alexa_skills.cis_diagnosis.lambda_handler
     events:
-      - alexaSkill: ${file(./config/env_${self:provider.stage}.json):ALEXA_SKILL_ID_1}
+      - alexaSkill: ${file(./config/env_${self:provider.stage}.json):ALEXA_SKILL_ID}
 
 plugins:
   - serverless-alexa-skills
@@ -31,100 +27,10 @@ custom:
     vendorId: ${file(./config/env_${self:provider.stage}.json):AMAZON_VENDOR_ID}
     clientId: ${file(./config/env_${self:provider.stage}.json):AMAZON_CLIENT_ID}
     clientSecret: ${file(./config/env_${self:provider.stage}.json):AMAZON_CLIENT_SECRET}
-    localServerPort: 9090
+    localServerPort: 9091
+
     skills:
       - id: ${file(./config/env_${self:provider.stage}.json):ALEXA_SKILL_ID}
-        manifest:
-          publishingInformation:
-            locales:
-              en-US:
-                name: LuckyNumber
-          apis:
-            custom:
-              endpoint:
-                uri: arn:aws:lambda:us-east-1:${file(./config/env_${self:provider.stage}.json):AWS_ACCOUNT}:function:click-aws-python-alexa-skill-${self:provider.stage}-luckyNumber
-          manifestVersion: '1.0'
-        models:
-          en-US:
-            interactionModel:
-              languageModel:
-                invocationName: good ducky
-                intents:
-                - name: LuckyNumberIntent
-                  slots:
-                      - name: UpperLimit
-                        type: AMAZON.NUMBER
-                  samples:
-                      - 'what is my lucky number lower than {UpperLimit}'
-                      - 'what is my lucky number under {UpperLimit}'
-                      - 'what is my lucky number'
-                      - 'tell me my lucky number'
-                      - 'tell me my lucky numbers lower than {UpperLimit}'
-                - name: HackIntent
-                  samples:
-                      - 'hack for today'
-                      - 'share a hack'
-                      - "today's hack"
-                - name: AskIntent
-                  slots:
-                      - name: Singer
-                        type: CUSTOM_SINGER
-                  samples:
-                      - 'ask {Singer} to sing a song'
-                      - '{Singer} sing a song'
-                      - '{Singer} please sing a song'
-                      - '{Singer} sing'
-                      - '{Singer} sing please'
-                      - '{Singer} please sing'
-                - name: AMAZON.HelpIntent
-                  samples:
-                      - 'help'
-                      - 'help me'
-                      - 'can you help me'
-                - name: AMAZON.CancelIntent
-                  samples:
-                      - 'cancel'
-                      - 'stop'
-                - name: AMAZON.StopIntent
-                  samples:
-                      - 'bye'
-                      - 'good bye'
-                      - GoodBye
-                      - done
-                types:
-                  - values:
-                      - name:
-                          value: thatha
-                      - name:
-                          value: patti
-                      - name:
-                          value: anyone
-                      - name:
-                          value: Amma
-                      - name:
-                          value: appa
-                      - name:
-                          value: param
-                      - name:
-                          value: Punitha
-                      - name:
-                          value: Punitha mami
-                      - name:
-                          value: Suri mama
-                      - name:
-                          value: Suri
-                      - name:
-                          value: Padma
-                      - name:
-                          value: Yogesh
-                      - name:
-                          value: Gayathri
-                      - name:
-                          value: Janani
-                      - name:
-                          value: shanker
-                    name: CUSTOM_SINGER
-      - id: ${file(./config/env_${self:provider.stage}.json):ALEXA_SKILL_ID_1}
         manifest:
           publishingInformation:
             locales:
