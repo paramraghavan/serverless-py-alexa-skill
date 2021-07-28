@@ -13,6 +13,7 @@ sls create -t aws-python --name sls-py-alexa-color-picker -p sls-py-alexa-color-
 cd sls-py-alexa-color-picker
 sls plugin install -n serverless-alexa-skills
 sls plugin install -n serverless-python-requirements
+
 cd auth-yml
 sls alexa auth
 cd ..
