@@ -77,7 +77,7 @@ sls alexa build
 #see the model created
 sls alexa models 
 
-# Create Endpoint, this has all our logic what to do when a invokation and intents  calls are made 
+# Create Endpoint, this has all our logic what to do when a invocation and intents  calls are made 
 # deploys lambda endpoint
 # to deploy and remove lambda you need to setup credentials token
 # configure credentials token, make sure u have an aws user created with appropriate permissions 
