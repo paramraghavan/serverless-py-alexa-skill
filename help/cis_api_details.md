@@ -1,5 +1,4 @@
 For every alexa request we make the following 3 calls to CIS in sequence and get the answer back.
-
 # Step 1
 - Invoke Boto3 api as follows:
 <pre>  

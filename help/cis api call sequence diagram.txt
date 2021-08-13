@@ -1,0 +1,22 @@
+title CIS API Call
+
+participant Alexa Service
+participant CIS Step1
+participant CIS Step2
+participant CIS Step3
+
+Alexa Service->CIS Step1:I have fever cold headache ganesh
+
+Alexa Service<-CIS Step1:All applicable medical conditions returned \n- fever, cold, headache
+
+
+Alexa Service->CIS Step2: make url call
+Alexa Service<-CIS Step2: Get all the medical conditions configured in CIS
+
+Alexa Service->Alexa Service:save all the CIS medical condtions\n in a dicationary - med_dict
+
+Alexa Service->Alexa Service: make a comma separate symptom ids list \n for fever cold headache\n searching in the med_dict\n let's say it is 17,20.30
+
+Alexa Service->CIS Step3: send all the matching symptom ids (17,20,30)
+
+Alexa Service<-CIS Step3: send the cis generated response to alexa service
