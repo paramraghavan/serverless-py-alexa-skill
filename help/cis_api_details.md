@@ -77,6 +77,7 @@ Sequence Diagram
   http://ciswebapi.azurewebsites.net/api/DiagnosisResults/
   Input to above url is the list of SyptomId's based on step 2 - 17,18,20,31
 <pre>
+    Request:
     Post the following payload to the above url
         LoginId = "25a5e4b7-20f6-4529-afb0-08995e5ef15b",
         MajorComplaintIds = null,
@@ -85,4 +86,76 @@ Sequence Diagram
         Password = "sanal_123",
         SymptomIds = symptomIds (comma separated), 17,18,20,31
         SymptomsDoctorsNote = null
+</pre>
+
+<pre>
+    Response snippet:
+    [
+     {
+        "DiagnosisID":112,
+        "DiagnosisName":"Acute Meningitis",
+        "TotalWeightage":70,
+        "Description":"",
+        "Link":"",
+        "NextAction":"• CT brain No Contrast<br><br>• Do Lumbar Pressure for CSF analysis, after making sure there is no evidence of ICT",
+        "LabTest":"CT brain No Contrast",
+        "Importants":false,
+        "LabTestIds":"93",
+        "ImportanceIds":null,
+        "DiagnosisIdCollection":null,
+        "DiseaseId":0,
+        "DiseaseName":null,
+        "DiagnosisPriority":101
+     },
+     {
+        "DiagnosisID":173,
+        "DiagnosisName":"Sepsis",
+        "TotalWeightage":60,
+        "Description":"",
+        "Link":"",
+        "NextAction":"• Start early Broad spectrum antibiotics",
+        "LabTest":" ",
+        "Importants":false,
+        "LabTestIds":null,
+        "ImportanceIds":null,
+        "DiagnosisIdCollection":null,
+        "DiseaseId":0,
+        "DiseaseName":null,
+        "DiagnosisPriority":101
+     },
+     {
+        "DiagnosisID":174,
+        "DiagnosisName":"Severe Sepsis",
+        "TotalWeightage":50,
+        "Description":"",
+        "Link":"",
+        "NextAction":"• Look for sepsis induced organ dysfunction and elevated Lactic acid levels",
+        "LabTest":" ",
+        "Importants":false,
+        "LabTestIds":null,
+        "ImportanceIds":null,
+        "DiagnosisIdCollection":null,
+        "DiseaseId":0,
+        "DiseaseName":null,
+        "DiagnosisPriority":7
+     },
+     {
+        "DiagnosisID":430,
+        "DiagnosisName":"Acute Pyelonephritis",
+        "TotalWeightage":40,
+        "Description":"",
+        "Link":"",
+        "NextAction":"• Do US kidney in complicated Acute Pyelonephritis<div>Recommended one dose ceftriaxone or one dose Aminoglycoside prior to oral treatment with antibiotics</div>",
+        "LabTest":" ",
+        "Importants":false,
+        "LabTestIds":null,
+        "ImportanceIds":null,
+        "DiagnosisIdCollection":null,
+        "DiseaseId":0,
+        "DiseaseName":null,
+        "DiagnosisPriority":10
+     },
+     .
+     .
+  ]
 </pre>
