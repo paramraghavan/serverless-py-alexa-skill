@@ -19,4 +19,7 @@ Alexa Service->Alexa Service: make a comma separate symptom ids list \n for feve
 
 Alexa Service->CIS Step3: send all the matching symptom ids (17,20,30)
 
-Alexa Service<-CIS Step3: send the cis generated response to alexa service
+Alexa Service<-CIS Step3: cis generated response has lots of diagnosis retuned with different TotalWeightage
+
+
+Alexa Service<-#red>Alexa Service:should we pick the first n diagnosis or all diagnosis\ngreater than a particular TotalWeightage value

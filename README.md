@@ -144,6 +144,8 @@ Notes:
 - https://github.com/alexa/alexa-skills-kit-sdk-for-python
 - https://github.com/alexa-samples/skill-sample-python-colorpicker
 
-Squence Diagram
+Sequence Diagram
 ---------------
 - https://sequencediagram.org/
+- [online photo editor](https://www.photopea.com/)
+- [online block diagram tool](https://www.diagrameditor.com/)
