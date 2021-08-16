@@ -2,7 +2,7 @@ For every alexa request we make the following 3 calls to CIS in sequence and get
 
 Sequence Diagram
 ------------------
-![image](https://user-images.githubusercontent.com/52529498/129389616-0759a532-ed9f-4f31-a4ee-02fb0696682a.png)
+![image](https://user-images.githubusercontent.com/52529498/129519688-5e11bc0b-76cc-4e57-a404-b814e2a3fe88.png)
 
 
 # Step 1
