@@ -19,6 +19,7 @@ Build and deploy Alexa using Serverless framework and python
 
 3. Install Serverless
 - install *serverless framework* - https://www.serverless.com/framework/docs/providers/aws/guide/quick-start/
+- sls and python template - https://www.serverless.com/framework/docs/providers/aws/examples/hello-world/python
 - Install *node*, my node version v14.15.5. https://nodejs.org/dist/v14.17.0/node-v14.17.0-x64.msi
 - npm install -g serverless
 
